@@ -1,5 +1,6 @@
 {
   "name": "avainformatica.io",
+  "repository": {}, 
   "version": "1.0.0",
   "description": "App.js",
   "main": "app.js",
