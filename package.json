@@ -1,18 +1,11 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "Backend da Aplicação",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Andrezao <ava.info.contato@gmail.com>",
+  "description": "Backend da aplicação",
+  "license": "MIT",
   "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "mongoose": "^5.7.3",
-    "multer": "^1.4.2"
+    "express": "^4.17.1"
   }
 }
