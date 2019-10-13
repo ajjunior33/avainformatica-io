@@ -16,4 +16,7 @@ app.use(express.json());
 app.use('/files', express.static(path.resolve(__dirname, '..', 'uploads')));
 app.use(routes);
 
-app.listen(3333);
+var port = process.env.andre || 3000;
+app.listen(port, function () {
+    console.log('Umbler listening on port %s', port);
+});

@@ -11,7 +11,6 @@ const User = require("../models/Users");
 module.exports = {
     index(req, res) {
         return res.send("Olá, mundo!");
-
     },
     async store(req, res) {
         const { email } = req.body;
