@@ -1,19 +1,19 @@
-var express = require('express');
-var app = express();
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
+const path = require('path');
 
-app.get("/", (req, res) => {
-    return res.send("<h1>Amor</h1>");
-}); 
-app.get("/login", (req, res) => {
-    return res.json({"login" : "logar-se"});
-}); 
-app.get("/contato", (req, res) => {
-    return res.json({
-        "person": "André Souza", 
-        "celular" : "(27) 98804-3058"});
-}); 
-                                
-var port = process.env.andre || 3000;
-app.listen(port, function () {
-    console.log('Umbler listening on port %s', port);
+
+const routes = require('./routes');
+
+const app = express();
+mongoose.connect("mongodb://user:andreregedit@omnistack9-shard-00-00-4kshp.mongodb.net:27017,omnistack9-shard-00-01-4kshp.mongodb.net:27017,omnistack9-shard-00-02-4kshp.mongodb.net:27017/semana9?ssl=true&replicaSet=OmniStack9-shard-0&authSource=admin&retryWrites=true&w=majority", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
 });
+app.use(cors());
+app.use(express.json());
+app.use('/files', express.static(path.resolve(__dirname, '..', 'uploads')));
+app.use(routes);
+
+app.listen(3333);
