@@ -4,6 +4,8 @@
   "main": "index.js",
   "author": "ajjunior33 NWT <ajjunior33@gmail.com>",
   "license": "MIT",
+  "private":true,
+  "description": "",
   "dependencies": {
     "express": "^4.17.1",
     "nodemailer": "^6.3.1"
