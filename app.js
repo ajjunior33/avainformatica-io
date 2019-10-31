@@ -8,7 +8,12 @@ app.use(express.json());
 app.get('/', (req, res) => {
     const {email, mensagem} = req.body;
     res.json({email: email, mensagem: mensagem});
-})
+});
+
+app.get('contas', (req, res) =>{
+
+    res.json({ok: "Ok"});
+});
 
 
 app.get("/send", (req, res) => {
