@@ -5,7 +5,11 @@ const ContasController = require("./controllers/ContasController");
 const routes = express.Router();
 const transporter = require('./config/nodemailerConfig');
 
-
+routes.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
 
 routes.get('/', (req, res) => {
     const { email, mensagem } = req.body;
@@ -16,6 +20,7 @@ routes.get('/contas', (req, res) => {
 
     res.json({ ok: "Ok" });
 });
+
 
 
 routes.get("/send", (req, res) => {
