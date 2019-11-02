@@ -12,6 +12,7 @@ class Cards extends Model {
       agencia: DataTypes.STRING ,
       numero: DataTypes.STRING ,
       validade: DataTypes.STRING ,
+      color: DataTypes.STRING,
       codigoSeguranca: DataTypes.STRING,
       limite: DataTypes.DECIMAL,
     },{
