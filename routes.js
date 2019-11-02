@@ -46,6 +46,11 @@ routes.get("/send", (req, res) => {
 routes.get("/listContas", ContasController.index);
 routes.get("/listConta", ContasController.show);
 
+
+/*LOGIN*/
+routes.post("/login/", UsersController.index);
+
+/* CONTAS */
 routes.post("/novaConta", ContasController.store);
 routes.post("/pagar/:id", ContasController.pagar);
 routes.post("/extornar/:id", ContasController.extorno);
