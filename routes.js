@@ -1,6 +1,7 @@
 const express = require('express');
 
 const ContasController = require("./controllers/ContasController");
+const UsersController = require("./controllers/UsersController");
 
 const routes = express.Router();
 const transporter = require('./config/nodemailerConfig');

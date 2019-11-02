@@ -10,6 +10,7 @@ class Users extends Model {
     super.init({
       email: DataTypes.STRING,
       usuario: DataTypes.STRING,
+      senha: DataTypes.STRING,
       permissao: DataTypes.STRING,
       nome: DataTypes.INTEGER,
         },{
