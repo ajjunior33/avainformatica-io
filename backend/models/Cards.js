@@ -9,6 +9,7 @@ class Cards extends Model {
     super.init({
       banco: DataTypes.STRING,
       conta: DataTypes.STRING ,
+      nome: DataTypes.STRING,
       agencia: DataTypes.STRING ,
       numero: DataTypes.STRING ,
       validade: DataTypes.STRING ,
