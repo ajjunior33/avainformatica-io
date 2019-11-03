@@ -66,6 +66,9 @@ module.exports = {
   async showlist(req, res) {
     const cards = await Contas.findAll({
       attributes: ['card_id', [sequelize.fn('sum', sequelize.col('valor')), 'total']],
+      where:{
+        status: 0
+      },
       include:[{
         model: Cards,
         as: 'owner',
