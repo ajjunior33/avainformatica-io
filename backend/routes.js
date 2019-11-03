@@ -75,8 +75,7 @@ routes.delete("/delete/:id", ContasController.delete);
 /*CARTOES*/
 
 routes.get("/listCards", CartoesController.index);
-
 routes.post("/addCards", CartoesController.store);
-
 routes.get("/listCard/:id", CartoesController.show);
+routes.get("/listCardT", ContasController.showlist);
 module.exports = routes;

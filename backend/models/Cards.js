@@ -18,7 +18,7 @@ class Cards extends Model {
       limite: DataTypes.DECIMAL,
     },{
       sequelize, 
-      tableName: 'cartoes'
+      tableName: 'cards'
     });
   }
 

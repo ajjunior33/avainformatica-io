@@ -1,10 +1,6 @@
 
 const { Model, DataTypes } = require('sequelize');
-
-
-
 class Contas extends Model {
-
 
   static init(sequelize){
     super.init({
@@ -12,11 +8,15 @@ class Contas extends Model {
       parcela: DataTypes.INTEGER,
       valor: DataTypes.DECIMAL,
       status: DataTypes.INTEGER,
-      cartao: DataTypes.INTEGER,
+      card_id: DataTypes.INTEGER,
     },{
       sequelize, 
-      tableName: 'financasJr'
+      tableName: 'finances'
     });
+  }
+
+  static associate(models) {
+    this.belongsTo(models.Cards, { foreignKey: 'card_id', as: 'owner' });
   }
 
 }

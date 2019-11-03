@@ -10,7 +10,7 @@ module.exports = {
 
     },
     async store(req, res) {
-        const {banco, conta, agencia, numero, validade, codigoSeguranca, limite} = req.body;
+        const {banco, conta, agencia, nome, numero, validade, codigoSeguranca, cor, limite} = req.body;
         const cards = await Cards.findOrCreate({
             where: {numero: numero },
 
@@ -18,8 +18,10 @@ module.exports = {
                 banco: banco,
                 conta: conta,
                 agencia: agencia,
+                nome: nome,
                 numero: numero,
                 validade: validade,
+                color: cor,
                 codigoSeguranca: codigoSeguranca,
                 limite: limite
             }

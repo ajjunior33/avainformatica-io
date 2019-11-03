@@ -6,11 +6,14 @@ const dbConfig = require('../config/database');
 const Contas = require('../models/Contas');
 const Users = require('../models/Users');
 const Cards = require('../models/Cards');
+
 const connection = new Sequelize(dbConfig);
 
 
 Contas.init(connection);
 Users.init(connection);
 Cards.init(connection);
+
+Contas.associate(connection.models);
 
 module.exports = connection;
