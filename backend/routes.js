@@ -57,6 +57,25 @@ routes.get("/send", (req, res) => {
 
 });
 
+routes.get("/subsend", (req, res) => {
+    const { title, mensagem, email } = req.body;
+    const mailOptions = {
+        from: 'andrejr@suporteava.com.br',
+        to: email,
+        subject: title,
+        //text: 'Olá, mundo!'
+        html: `${mensagem}. <br><br><br><br> <i>Create by A.V.A Informática </i>`,
+    }
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            return res.json(error);
+        } else {
+            return res.json("E-mail enviado: " + info.response);
+        }
+    });
+
+});
+
 
 routes.get("/listContas", ContasController.index);
 routes.get("/listConta", ContasController.show);
