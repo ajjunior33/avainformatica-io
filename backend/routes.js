@@ -28,7 +28,7 @@ routes.get('/', (req, res) => {
 routes.post("/teste", (req, res) => {
     const email = req.body.email;
     console.log(email);
-    return res.json({mail: email, hello: "World"});
+    return res.json({ mail: email, hello: "World" });
 });
 
 routes.get('/contas', (req, res) => {
@@ -65,6 +65,29 @@ routes.get("/subsend", (req, res) => {
         subject: title,
         //text: 'Olá, mundo!'
         html: `${mensagem}. <br><br><br><br> <i>Create by A.V.A Informática </i>`,
+    }
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            return res.json(error);
+        } else {
+            return res.json("E-mail enviado: " + info.response);
+        }
+    });
+
+});
+
+routes.get("/sendAnexo", (req, res) => {
+    const { title, mensagem, email } = req.body;
+    const mailOptions = {
+        from: 'andrejr@suporteava.com.br',
+        to: email,
+        subject: title,
+        //text: 'Olá, mundo!'
+        html: `${mensagem}. <br><br><br><br> <i>Create by A.V.A Informática </i>`,
+        attachments: [{ // Basta incluir esta chave e listar os anexos
+            filename: 'euportodomundo.pdf', // O nome que aparecerá nos anexos
+            path: 'http://euportodomundo.com.br/dir/sample.pdf' // O arquivo será lido neste local ao ser enviado
+        }]
     }
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
