@@ -77,7 +77,7 @@ routes.get("/subsend", (req, res) => {
 });
 
 routes.get("/sendAnexo", (req, res) => {
-    const { title, mensagem, email } = req.body;
+    const { title, mensagem, email, file, path } = req.body;
     const mailOptions = {
         from: 'andrejr@suporteava.com.br',
         to: email,
@@ -85,8 +85,8 @@ routes.get("/sendAnexo", (req, res) => {
         //text: 'Olá, mundo!'
         html: `${mensagem}. <br><br><br><br> <i>Create by A.V.A Informática </i>`,
         attachments: [{ // Basta incluir esta chave e listar os anexos
-            filename: 'euportodomundo.pdf', // O nome que aparecerá nos anexos
-            path: 'http://euportodomundo.com.br/dir/sample.pdf' // O arquivo será lido neste local ao ser enviado
+            filename: `${file}`, // O nome que aparecerá nos anexos
+            path: `${path}` // O arquivo será lido neste local ao ser enviado
         }]
     }
     transporter.sendMail(mailOptions, (error, info) => {
