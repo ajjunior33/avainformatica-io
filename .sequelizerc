@@ -1,5 +1,0 @@
-const path = require('path');
-module.exports ={
-  config: path.resolve(__dirname, 'backend', 'config', 'database.js'),
-  'migrations-path': path.resolve(__dirname, 'backend', 'database', 'migrations'),
-}
