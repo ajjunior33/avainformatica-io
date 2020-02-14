@@ -8,7 +8,7 @@
   "description": "",
   "scripts": {
     "start": "node backend/app",
-    "dev": "nodemon backend/app"
+    "dev": "node src/app"
   },
   "dependencies": {
     "axios": "^0.19.2",
