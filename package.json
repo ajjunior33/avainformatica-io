@@ -1,0 +1,12 @@
+{
+  "name": "umbler",
+  "version": "1.0.0",
+  "main": "app.js",
+  "author": "ajjunior33 NWT <ajjunior33@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "description": "",
+  "scripts": {
+    "start": "node src/app"
+  }
+}
