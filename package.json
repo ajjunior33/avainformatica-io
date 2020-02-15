@@ -4,7 +4,7 @@
   "main": "app.js",
   "author": "ajjunior33 NWT <ajjunior33@gmail.com>",
   "license": "MIT",
-  "private": true,
+  "private": false,
   "description": "",
   "scripts": {
     "start": "node src/app"
