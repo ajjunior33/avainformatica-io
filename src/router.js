@@ -9,4 +9,5 @@ router.get("/", (req, res) =>{
 
 router.get("/cadastros", CadastrosController.index);
 router.post("/cadastros", CadastrosController.store);
+router.delete("/cadastros/:id", CadastrosController.delete);
 module.exports = router;

@@ -16,5 +16,13 @@ module.exports = {
                 return res.status(400).json({"messager": "Não foi possivel cadastrar seu usuario, tente mais tarde."});
             }
         }
+    },
+    async delete(req, res){
+        const { id } = req.params;
+        if(await cadastros.deleteOne({"_id": id})){
+            return res.json({"messager": "Deletado com sucesso!"});
+        }else {
+            return res.son({"messager": "Não foi possivel deletar o cadastro."});
+        }
     }
 }

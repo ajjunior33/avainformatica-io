@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 
 const Router = require("./router");
 const app = express();
-
+/*
 const configs = {
     caminho: "../front/public/", //Aqui será definido a pasta de saída onde contém o index.html e os outros arquivos.
     forcarHTTPS: true, //Defina para true se desejar que o redirecionamento para HTTPS seja forçado (é necessário certificado SSL ativo)
@@ -28,7 +28,7 @@ app.get("*", (req, res) => {// O wildcard '*' serve para servir o mesmo index.ht
 
 app.listen(configs.port, () => {
     console.log(`Escutando na ${configs.port}!`);
-});
+});*/
 
 
 mongoose.connect("mongodb+srv://ajjunior33:andreregedit@cluster0-zrjud.mongodb.net/test?retryWrites=true&w=majority",{
