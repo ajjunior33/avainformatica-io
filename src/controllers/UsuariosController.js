@@ -20,7 +20,7 @@ module.exports = {
         const { nome, email, senha } = req.body;
         const newPassword = sha1(senha);
         const data = new Date();
-        if(await cadastros.findOne({email: email})){
+        if(await usuarios.findOne({email: email})){
             return res.json({"messager": "Você já está cadastrado(a) em nossa base de dados."});
         }  else {
             const token = sha1(email + data.getTime());
