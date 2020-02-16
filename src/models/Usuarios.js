@@ -9,6 +9,10 @@ const UsuariosSchema = new mongoose.Schema({
     senha: {
         type: String,
         required: true
+    },
+    token: {
+        type: String,
+        required: true
     }
 });
 

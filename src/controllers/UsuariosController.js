@@ -19,10 +19,12 @@ module.exports = {
     async store(req, res){
         const { nome, email, senha } = req.body;
         const newPassword = sha1(senha);
+        const data = new Date();
         if(await cadastros.findOne({email: email})){
             return res.json({"messager": "Você já está cadastrado(a) em nossa base de dados."});
         }  else {
-            const cadastrar = await usuarios.create({nome, email, newPassword});
+            const token = sha1(email + data.getTime());
+            const cadastrar = await usuarios.create({nome, email, "senha": newPassword, token});
             if(cadastrar){
                 return res.json({"messager": "Cadastrado com successo!"});
             }else{
