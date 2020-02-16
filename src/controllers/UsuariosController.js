@@ -32,4 +32,14 @@ module.exports = {
             }
         }
     },
+    async checkAuth(req, res){
+        const {token} = req.params;
+
+        const check = await usuarios.findOne({token: token});
+        if(check){
+            return res.json(true);
+        }else{
+            return res.json(false);
+        }
+    }
 }

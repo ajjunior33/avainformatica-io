@@ -14,5 +14,6 @@ router.delete("/cadastros/:id", CadastrosController.delete);
 
 router.post("/usuarios", UsuariosController.store);
 router.post("/auth", UsuariosController.auth);
+router.get("/checkAuth/:token", UsuariosController.checkAuth);
 
 module.exports = router;
