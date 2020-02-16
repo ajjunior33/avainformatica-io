@@ -8,7 +8,6 @@
   "description": "",
   "scripts": {
     "start": "node src/app",
-    "postinstall": "npm run build"
   },
   "dependencies": {
     "axios": "^0.19.2",
