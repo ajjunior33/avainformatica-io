@@ -7,13 +7,13 @@ module.exports = {
             const newPassword = sha1(senha);
             const auth = await usuarios.findOne({email, "senha": newPassword});
             if(auth){
-                return res.json({"messager": "Acessado!", "auth": auth});
+                return res.json({"status": true, "messager": "Acessado!", "auth": auth});
             
             }else{
-                return res.json({"messager": "Email ou Senha incorreta."});
+                return res.json({"status": false, "messager": "Email ou Senha incorreta."});
             }
         }else{
-            return res.json({"messager": "Não encontramos esse email."});
+            return res.json({"status": false,"messager": "Não encontramos esse email."});
         }
     },
     async store(req, res){
