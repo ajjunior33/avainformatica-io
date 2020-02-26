@@ -3,6 +3,9 @@ const path = require("path");
 const cors = require("cors");
 const mongoose = require("mongoose");
 
+
+const socketIO = require('socket.io');
+const socketIOHelper = require("./helpers/socketio")
 const Router = require("./router");
 const app = express();
 /*
@@ -31,11 +34,21 @@ app.listen(configs.port, () => {
 });*/
 
 
-mongoose.connect("mongodb+srv://ajjunior33:andreregedit@cluster0-zrjud.mongodb.net/test?retryWrites=true&w=majority",{
+mongoose.connect("mongodb+srv://ajjunior33:andreregedit@cluster0-zrjud.mongodb.net/test?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
 
+
+router.get("/", (req, res) => {
+    res.json({ "messager": "hello, world" });
+});
+router.get("/notification", (req, res) => {
+    var io = socketIO(server);
+    socketIOHelper.set(io);
+    var receivers = require("./socket/receivers.server.sockets");
+    receivers.receivers(io);
+});
 app.use(cors());
 app.use(express.json());
 app.use(Router);
