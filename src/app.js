@@ -37,7 +37,7 @@ mongoose.connect("mongodb+srv://ajjunior33:andreregedit@cluster0-zrjud.mongodb.n
 });
 
 
-router.get("/", (req, res) => {
+app.get("/", (req, res) => {
     res.json({ "messager": "hello, world" });
 });
 app.use(cors());
