@@ -3,9 +3,6 @@ const path = require("path");
 const cors = require("cors");
 const mongoose = require("mongoose");
 
-
-const socketIO = require('socket.io');
-const socketIOHelper = require("./helpers/socketio")
 const Router = require("./router");
 const app = express();
 /*
@@ -42,12 +39,6 @@ mongoose.connect("mongodb+srv://ajjunior33:andreregedit@cluster0-zrjud.mongodb.n
 
 router.get("/", (req, res) => {
     res.json({ "messager": "hello, world" });
-});
-router.get("/notification", (req, res) => {
-    var io = socketIO(server);
-    socketIOHelper.set(io);
-    var receivers = require("./socket/receivers.server.sockets");
-    receivers.receivers(io);
 });
 app.use(cors());
 app.use(express.json());
