@@ -1,14 +1,14 @@
 {
   "name": "umbler",
   "version": "1.0.0",
-  "main": "/src/app.js",
+  "main": "./src/app.js",
   "author": "ajjunior33 NWT <ajjunior33@gmail.com>",
   "license": "MIT",
   "private": false,
   "description": "",
   "scripts": {
-    "start": "node /src/app",
-    "dev": "nodemon /src/app"
+    "start": "node ./src/app",
+    "dev": "nodemon ./src/app"
   },
   "dependencies": {
     "axios": "^0.19.2",
