@@ -7,8 +7,8 @@
   "private": false,
   "description": "",
   "scripts": {
-    "start": "node ./src/app",
-    "dev": "nodemon ./src/app"
+    "start": "node",
+    "dev": "nodemon"
   },
   "dependencies": {
     "axios": "^0.19.2",
