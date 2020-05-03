@@ -1,10 +1,10 @@
 var express = require("express");
 var app = express();
 
-var port = process.env.ANDRE || 3000;
+var port = process.env.ANDRE || 3333;
 
 //... your code here ...
-app.get("/", (res, res) => {
+app.get("/", (req, res) => {
   return res.json({ messager: `Seu server está rodando na porta: ${port}` });
 });
 
